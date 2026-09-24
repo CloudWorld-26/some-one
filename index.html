@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#080306" />
+  <title>A Little Surprise for Sneha 🌹</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Fallback for browsers without svh support */
+    .opening-content { min-height: calc(var(--vh, 1vh) * 100); }
+    .screen { height: calc(var(--vh, 1vh) * 100); }
+  </style>
+</head>
+<body>
+
+  <canvas id="particleCanvas"></canvas>
+  <div id="floatingLayer" class="floating-layer"></div>
+
+  <!-- ══════════ SCREEN 1 : OPENING ══════════ -->
+  <section id="openingScreen" class="screen active">
+    <div class="opening-content">
+      <div class="crown-deco" id="crownDeco">✦ ✦ ✦</div>
+      <h1 class="name-reveal" id="nameReveal">Sneha Sahu</h1>
+      <div class="divider-line" id="dividerLine"></div>
+      <p class="subtitle" id="subtitleReveal">Someone made a little surprise for you…</p>
+
+      <div class="gift-box-wrap" id="giftBoxWrap">
+        <div class="gift-box" id="giftBox">
+          <div class="gift-lid"><div class="gift-ribbon-h"></div></div>
+          <div class="gift-body"><div class="gift-ribbon-v"></div></div>
+          <div class="gift-glow"></div>
+          <div class="gift-sparkles">
+            <span class="gs gs1">✦</span><span class="gs gs2">✧</span>
+            <span class="gs gs3">✦</span><span class="gs gs4">✧</span>
+          </div>
+        </div>
+        <p class="tap-hint" id="tapHint">✨ Tap to open your gift ✨</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SCREEN 2 : MESSAGE ══════════ -->
+  <section id="messageScreen" class="screen">
+    <div class="msg-bg-orb orb1"></div>
+    <div class="msg-bg-orb orb2"></div>
+    <div class="card-container">
+      <div class="card glass">
+        <div class="card-top-deco">
+          <span class="petal-icon">💖</span>
+          <div class="card-title-wrap">
+            <span class="card-for">— For —</span>
+            <h2 class="card-name">Sneha Sahu</h2>
+          </div>
+          <span class="petal-icon">💖</span>
+        </div>
+        <div class="card-divider"></div>
+        <div class="message-lines" id="messageLines">
+          <p class="msg-line greeting">Hey Sneha…</p>
+          <p class="msg-line">A little surprise, just to put a smile on your beautiful face.</p>
+          <p class="msg-line">Some people make moments special… and some people <em>are</em> the special moment.</p>
+          <p class="msg-line">You are one of those rare people who can make an ordinary day feel beautiful just by being there.</p>
+          <p class="msg-line">So this little gift is for you — for your smile, your happiness, and all those little moments that make my heart smile too.</p>
+          <p class="msg-line closing">Keep smiling, Sneha… <br/><span class="gold-text">because your smile looks beautiful on you.</span></p>
+        </div>
+        <div class="card-footer">
+          <span class="footer-rose">💛</span>
+          <span class="footer-rose" style="animation-delay:0.4s">💕</span>
+          <span class="footer-rose" style="animation-delay:0.8s">💛</span>
+        </div>
+        <!-- Heart CTA button — shown after all lines revealed -->
+        <div class="heart-cta" id="heartCta">
+          <button class="heart-cta-btn" id="heartCtaBtn">
+            <span class="hcta-heart">💖</span>
+            <span class="hcta-text">A Special Surprise for You</span>
+            <span class="hcta-arrow">✨</span>
+          </button>
+          <p class="hcta-hint">tap the heart to continue</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SCREEN 3 : MEMORIES ══════════ -->
+  <section id="memoriesScreen" class="screen mem-screen">
+    <div class="mem-bg-orb morb1"></div>
+    <div class="mem-bg-orb morb2"></div>
+
+    <div class="mem-layout">
+
+      <!-- Header row -->
+      <div class="mem-header">
+        <span class="mem-icon">📸</span>
+        <h2 class="mem-title">Our Little Memories</h2>
+        <p class="mem-sub">Swipe to explore ✨ Tap a frame to open</p>
+      </div>
+
+      <!-- Horizontal film strip -->
+      <div class="film-strip-wrap">
+        <!-- left fade edge -->
+        <div class="strip-edge strip-edge-left"></div>
+
+        <div class="film-strip" id="filmStrip">
+
+          <div class="frame-card" data-index="0">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="1.jpg" alt="Memory 1" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 01 💖</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="1">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="2.jpg" alt="Memory 2" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 02 💖</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="2">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="3.jpg" alt="Memory 3" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 03 ✨</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="3">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="4.jpg" alt="Memory 4" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 04 💕</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="4">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="5.jpg" alt="Memory 5" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 05 💛</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="5">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="6.jpg" alt="Memory 6" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 06 💗</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="6">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="7.jpg" alt="Memory 7" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 07 ⭐</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+          <div class="frame-card" data-index="7">
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+            <div class="frame-photo">
+              <img src="8.jpg" alt="Memory 8" loading="lazy"/>
+              <div class="frame-shine"></div>
+            </div>
+            <div class="frame-label">Memory 08 💖</div>
+            <div class="frame-holes"><span></span><span></span><span></span></div>
+          </div>
+
+        </div>
+
+        <!-- right fade edge -->
+        <div class="strip-edge strip-edge-right"></div>
+      </div>
+
+      <!-- Scroll hint dots -->
+      <div class="strip-dots" id="stripDots"></div>
+
+      <!-- End button -->
+      <div id="memoriesEndTrigger" class="memories-end-trigger">
+        <button class="mem-end-btn" id="memEndBtn">
+          <span>💛</span> Keep Smiling, Sneha <span>💛</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ SCREEN 4 : FINAL ══════════ -->
+  <section id="finalScreen" class="screen">
+    <div class="final-content">
+      <div class="final-ring-outer">
+        <div class="final-ring-inner">
+          <div class="final-heart" id="finalHeart">💖</div>
+        </div>
+      </div>
+      <h2 class="final-title">Keep Smiling, Sneha 🌸</h2>
+      <p class="final-sub">Because your smile makes this little world<br/>a little more beautiful.</p>
+      <div class="final-hearts-row">
+        <span>💕</span><span>💛</span><span>✨</span><span>💛</span><span>💕</span>
+      </div>
+      <div class="final-badge">Made with 💖 just for you</div>
+    </div>
+  </section>
+
+  <!-- ══════════ LIGHTBOX (iOS Style) ══════════ -->
+  <div id="lightbox" class="lightbox">
+
+    <!-- Blurred dynamic background -->
+    <div class="lb-bg" id="lbBg"></div>
+    <div class="lb-bg-overlay"></div>
+
+    <!-- Top bar -->
+    <div class="lb-topbar">
+      <button class="lb-close-btn" id="lbClose">✕</button>
+      <div class="lb-counter" id="lbCounter">1 / 8</div>
+      <button class="lb-heart-btn" id="lbHeartBtn">🤍</button>
+    </div>
+
+    <!-- Full screen photo -->
+    <div class="lb-photo-wrap" id="lbPhotoWrap">
+      <img class="lb-photo" id="lbImg" src="" alt="Memory" />
+    </div>
+
+    <!-- Bottom caption -->
+    <div class="lb-footer">
+      <p class="lb-caption" id="lbCaption"></p>
+      <p class="lb-date" id="lbDate"></p>
+    </div>
+
+  </div>
+
+  <!-- ══════════ AUDIO ══════════ -->
+  <audio id="bgMusic" loop preload="auto"><source src="music.mp3" type="audio/mpeg"/></audio>
+  <audio id="memoryMusic" loop><source src="song.mp3" type="audio/mpeg"/></audio>
+
+  <!-- ══════════ MUSIC BTN ══════════ -->
+  <button class="music-btn" id="musicBtn" title="Toggle Music">
+    <span class="music-icon">🎵</span>
+    <span class="music-label">Music</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
